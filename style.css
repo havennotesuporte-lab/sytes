@@ -215,8 +215,12 @@ body {
   background-color: var(--primary);
 }
 
-.column-right .column-indicator {
-  background-color: #0284c7;
+.column-masculino .column-indicator {
+  background-color: #2563eb;
+}
+
+.column-feminino .column-indicator {
+  background-color: #ec4899;
 }
 
 .column-title {

@@ -8,19 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
       dayName: "Sexta-feira",
       columns: [
         {
-          title: "Coluna da Esquerda",
-          side: "left",
+          title: "Banheiro Masculino",
+          type: "masculino",
           slots: [
             { time: "13:00 às 14:30", volunteers: ["George", "Gentil"] },
             { time: "14:30 às 15:30", volunteers: ["Fábio", "Raimundo"] }
           ]
         },
         {
-          title: "Coluna da Direita",
-          side: "right",
+          title: "Banheiro Feminino",
+          type: "feminino",
           slots: [
-            { time: "13:00 às 14:30", volunteers: ["Eliane", "Adri... (Adrisla / Adrieli)"] },
-            { time: "14:30 às 15:30", volunteers: ["Helizabeth", "Dágmar"] }
+            { time: "13:00 às 14:30", volunteers: ["Eliane", "Adriele"] },
+            { time: "14:30 às 15:30", volunteers: ["Elizabeth", "Dácia"] }
           ]
         }
       ]
@@ -29,18 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
       dayName: "Sábado",
       columns: [
         {
-          title: "Coluna da Esquerda",
-          side: "left",
+          title: "Banheiro Masculino",
+          type: "masculino",
           slots: [
-            { time: "15:00 às 16:30", volunteers: ["Leonardo", "Brian"] }
+            { time: "13:00 às 16:30", volunteers: ["Leonardo", "Brian"] }
           ]
         },
         {
-          title: "Coluna da Direita",
-          side: "right",
+          title: "Banheiro Feminino",
+          type: "feminino",
           slots: [
             { time: "13:00 às 15:00", volunteers: ["Tereza", "Evelin"] },
-            { time: "15:00 às 16:30", volunteers: ["Aristélia", "Ana"] }
+            { time: "15:00 às 16:30", volunteers: ["Aristélia", "Ana Júlia"] }
           ]
         }
       ]
@@ -49,18 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
       dayName: "Domingo",
       columns: [
         {
-          title: "Coluna da Esquerda",
-          side: "left",
+          title: "Banheiro Masculino",
+          type: "masculino",
           slots: [
-            { time: "14:30 às 15:45", volunteers: ["João Batista", "Raimundo"] }
+            { time: "13:00 às 15:45", volunteers: ["João Batista", "Raimundo"] }
           ]
         },
         {
-          title: "Coluna da Direita",
-          side: "right",
+          title: "Banheiro Feminino",
+          type: "feminino",
           slots: [
-            { time: "13:00 às 14:30", volunteers: ["Sulamita", "Juli... (Julieta / Julita)"] },
-            { time: "14:30 às 15:45", volunteers: ["Diranir", "Eléia"] }
+            { time: "13:00 às 14:30", volunteers: ["Sulamita", "Julie"] },
+            { time: "14:30 às 15:45", volunteers: ["Dirani", "Cléia"] }
           ]
         }
       ]
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <div class="columns-grid">
         ${dayData.columns.map(col => `
-          <div class="column-card column-${col.side}">
+          <div class="column-card column-${col.type}">
             <div class="column-card-header">
               <div class="column-indicator"></div>
               <h3 class="column-title">${col.title}</h3>
