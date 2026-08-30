@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentSection = document.getElementById('tab-content');
   const tabButtons = document.querySelectorAll('.tab-btn');
 
-  // Dataset estruturado do Congresso Felicidade Terrena 2026 - Departamento de Limpeza
+  // Dataset estruturado do Congresso Felicidade Eterna 2026 - Departamento de Limpeza
   const scheduleData = {
     sexta: {
       dayName: "Sexta-feira",
