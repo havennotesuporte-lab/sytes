@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Departamento de Limpeza - Congresso 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">Departamento de Limpeza</h1>
+    <div class="header-subtitle">
+      <div>Congresso</div>
+      <div>Felicidade Terrena</div>
+      <div>2026</div>
+    </div>
+  </header>
+
+  <nav class="tabs-nav-container">
+    <div class="tabs-wrapper" role="tablist" aria-label="Dias do Congresso">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="sexta">
+        Sexta-feira
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="sabado">
+        Sábado
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="domingo">
+        Domingo
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="tab-content" class="tab-dynamic-content" aria-live="polite">
+      <!-- Conteúdo inserido dinamicamente via innerHTML pelo script.js -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
