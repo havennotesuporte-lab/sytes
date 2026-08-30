@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
           type: "feminino",
           slots: [
             { time: "13:00 às 14:30", volunteers: ["Eliane", "Adriele"] },
-            { time: "14:30 às 15:30", volunteers: ["Elizabeth", "Dácia"] }
+            { time: "14:30 às 15:30", volunteers: ["Aristélia", "Ana Júlia"] }
           ]
         }
       ]
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
           type: "feminino",
           slots: [
             { time: "13:00 às 15:00", volunteers: ["Tereza", "Evelin"] },
-            { time: "15:00 às 16:30", volunteers: ["Aristélia", "Ana Júlia"] }
+            { time: "15:00 às 16:30", volunteers: ["Elizabeth", "Dácia"] }
           ]
         }
       ]
