@@ -1,3 +1,7 @@
+/*!
+ * Estudo de a Sentinela - Script Principal
+ * Version: 1.0.0
+ */
 document.addEventListener('DOMContentLoaded', () => {
   const contentSection = document.getElementById('tab-content');
   const tabButtons = document.querySelectorAll('.tab-btn');
