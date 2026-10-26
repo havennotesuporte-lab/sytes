@@ -140,31 +140,17 @@ window.DADOS_DESIGNACOES = {
       }
     },
     {
-      "numero": "9",
-      "pergunta": "9. Pare e pense nas bênçãos que tem agora.",
-      "comentario": "Nome do Irmão(ã)",
-      "tem_imagem": false,
-      "leitura_texto": null
-    },
-    {
-      "numero": "10",
-      "pergunta": "10. Comece pensando nos motivos que você tem para agradecer a Jeová todo dia.",
-      "comentario": "Nome do Irmão(ã)",
+      "numero": "9-10",
+      "pergunta": "9-10. Que bênçãos de Jeová você recebe a cada dia? (Veja também a imagem.)",
+      "comentario": "Alex",
       "tem_imagem": true,
-      "imagem_desc": "Preste atenção todos os dias nas bênçãos que está recebendo (Parágrafos 9-10)",
+      "imagem_desc": "Preste atenção todos os dias nas bênçãos que está recebendo (Veja os parágrafos 9-10.)",
       "comentario_imagem": "Nome do Irmão(ã)",
       "leitura_texto": null
     },
     {
-      "numero": "11",
-      "pergunta": "11. Pense também na bênção que é fazer parte de uma família mundial unida e amorosa.",
-      "comentario": "Nome do Irmão(ã)",
-      "tem_imagem": false,
-      "leitura_texto": null
-    },
-    {
-      "numero": "12",
-      "pergunta": "12. Quando paramos e pensamos nas bênçãos que Jeová já nos deu e está nos dando...",
+      "numero": "11-12",
+      "pergunta": "11-12. Como nossos irmãos podem ser uma bênção para nós?",
       "comentario": "Nome do Irmão(ã)",
       "tem_imagem": false,
       "leitura_texto": null
@@ -200,21 +186,14 @@ window.DADOS_DESIGNACOES = {
       "leitura_texto": null
     },
     {
-      "numero": "17",
-      "pergunta": "17. Como podemos mostrar por ações que somos gratos a Jeová? (Romanos 12:1)",
+      "numero": "17-18",
+      "pergunta": "17-18. Como podemos mostrar por ações que somos gratos a Jeová? (Romanos 12:1)",
       "comentario": "Nome do Irmão(ã)",
       "tem_imagem": false,
       "leitura_texto": {
         "texto": "Romanos 12:1",
         "leitor": "Nome do Irmão(ã)"
       }
-    },
-    {
-      "numero": "18",
-      "pergunta": "18. A gratidão nos motivou a dedicar nossa vida a Jeová e nos batizar.",
-      "comentario": "Nome do Irmão(ã)",
-      "tem_imagem": false,
-      "leitura_texto": null
     },
     {
       "numero": "19",
