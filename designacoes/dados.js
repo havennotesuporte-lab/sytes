@@ -38,7 +38,7 @@ window.DADOS_DESIGNACOES = {
         "id": 1,
         "paragrafo": "1",
         "titulo": "A gratidão nos ajuda a ter felicidade e satisfação",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Francisca Falcão"
       },
       {
         "id": 2,
@@ -78,7 +78,7 @@ window.DADOS_DESIGNACOES = {
       "comentario": "Ítalo Fernandes",
       "tem_imagem": true,
       "imagem_desc": "A gratidão nos ajuda a ter felicidade e satisfação",
-      "comentario_imagem": "Nome do Irmão(ã)",
+      "comentario_imagem": "Francisca Falcão",
       "leitura_texto": null
     },
     {
