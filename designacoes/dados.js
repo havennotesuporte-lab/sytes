@@ -47,7 +47,7 @@ window.DADOS_DESIGNACOES = {
         "id": 3,
         "paragrafo": "14",
         "titulo": "Como você pode mostrar sua gratidão pelo que outros fazem por você?",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Eliane"
       }
     ],
     "recapitulacao": [
@@ -155,17 +155,17 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "13",
       "pergunta": "13. De que formas podemos mostrar gratidão?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Marileide Lopes",
       "tem_imagem": false,
       "leitura_texto": null
     },
     {
       "numero": "14",
       "pergunta": "14. Como você pode mostrar por palavras que é grato? (Veja também as imagens.)",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Jorge Santos",
       "tem_imagem": true,
       "imagem_desc": "Como você pode mostrar sua gratidão pelo que outros fazem por você?",
-      "comentario_imagem": "Nome do Irmão(ã)",
+      "comentario_imagem": "Eliane",
       "leitura_texto": null
     },
     {
