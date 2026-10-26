@@ -178,7 +178,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "16",
       "pergunta": "16. Por que devemos mostrar por ações que somos gratos?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Brian Miranda",
       "tem_imagem": false,
       "leitura_texto": null
     },
