@@ -195,7 +195,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "19",
       "pergunta": "19. Por que você está decidido a continuar mostrando que é grato?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Sulamita Rodrigues",
       "tem_imagem": false,
       "leitura_texto": null
     }
