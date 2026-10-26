@@ -171,7 +171,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "15",
       "pergunta": "15. Como podemos mostrar por palavras nossa gratidão a Jeová?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Randson Henrique",
       "tem_imagem": false,
       "leitura_texto": null
     },
