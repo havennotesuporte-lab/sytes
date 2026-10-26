@@ -185,7 +185,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "17-18",
       "pergunta": "17-18. Como podemos mostrar por ações que somos gratos a Jeová? (Romanos 12:1)",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Beatriz",
       "tem_imagem": false,
       "leitura_texto": {
         "texto": "Romanos 12:1",
