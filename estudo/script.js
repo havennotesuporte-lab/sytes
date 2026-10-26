@@ -121,4 +121,69 @@ document.addEventListener('DOMContentLoaded', () => {
       fecharModalBiblia();
     }
   });
+
+  // =========================================
+  // SINCRONIZAÇÃO AUTOMÁTICA COM DADOS.JS / JSON
+  // =========================================
+  function sincronizarDesignacoes(dados) {
+    if (!dados) return;
+
+    // 1. Dirigente
+    if (dados.estudo && dados.estudo.dirigente) {
+      const elDir = document.querySelector('[data-tipo="dirigente"]');
+      if (elDir) elDir.textContent = dados.estudo.dirigente;
+    }
+
+    // 2. Parágrafos (Comentário, Leitura, Imagem)
+    if (Array.isArray(dados.paragrafos)) {
+      dados.paragrafos.forEach(p => {
+        const item = document.querySelector(`.item-estudo[data-paragrafo="${p.numero}"]`);
+        if (!item) return;
+
+        // Comentário da pergunta
+        const nomeComentario = item.querySelector('.card-comentario .card-designacao-nome');
+        if (nomeComentario && p.comentario) {
+          nomeComentario.textContent = p.comentario;
+        }
+
+        // Leitura bíblica
+        if (p.leitura_texto) {
+          const nomeLeitura = item.querySelector('.card-leitura .card-designacao-nome');
+          if (nomeLeitura && p.leitura_texto.leitor) {
+            nomeLeitura.textContent = p.leitura_texto.leitor;
+          }
+        }
+
+        // Comentário da imagem
+        if (p.tem_imagem) {
+          const nomeImagem = item.querySelector('.card-imagem .card-designacao-nome');
+          if (nomeImagem && p.comentario_imagem) {
+            nomeImagem.textContent = p.comentario_imagem;
+          }
+        }
+      });
+    }
+
+    // 3. Perguntas de Recapitulação
+    if (dados.designacoes_especiais && Array.isArray(dados.designacoes_especiais.recapitulacao)) {
+      dados.designacoes_especiais.recapitulacao.forEach(r => {
+        const cardRecap = document.querySelector(`.card-recap[data-recap="${r.numero}"] .card-designacao-nome`);
+        if (cardRecap && r.designado) {
+          cardRecap.textContent = r.designado;
+        }
+      });
+    }
+  }
+
+  // Executa sincronização com window.DADOS_DESIGNACOES ou fallback fetch
+  if (window.DADOS_DESIGNACOES) {
+    sincronizarDesignacoes(window.DADOS_DESIGNACOES);
+  } else {
+    fetch('../designacoes/designacoes.json?v=' + Date.now())
+      .then(res => res.ok ? res.json() : null)
+      .then(dados => {
+        if (dados) sincronizarDesignacoes(dados);
+      })
+      .catch(() => {});
+  }
 });
