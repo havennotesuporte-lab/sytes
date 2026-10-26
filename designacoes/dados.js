@@ -25,7 +25,7 @@ window.DADOS_DESIGNACOES = {
       {
         "paragrafo": "8",
         "texto": "2 Coríntios 4:7",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Itagenir Ribeiro"
       },
       {
         "paragrafo": "17",
@@ -136,7 +136,7 @@ window.DADOS_DESIGNACOES = {
       "tem_imagem": false,
       "leitura_texto": {
         "texto": "2 Coríntios 4:7",
-        "leitor": "Nome do Irmão(ã)"
+        "leitor": "Itagenir Ribeiro"
       }
     },
     {
