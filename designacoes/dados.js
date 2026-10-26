@@ -98,7 +98,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "4",
       "pergunta": "4. Por que a ingratidão faz mal para nós?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Edgar Rodrigues",
       "tem_imagem": false,
       "leitura_texto": null
     },
