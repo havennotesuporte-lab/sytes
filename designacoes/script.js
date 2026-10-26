@@ -158,16 +158,47 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <h2 class="meta-titulo">${estudo.titulo || ''}</h2>
           <div class="meta-dirigente-box">
-            <div class="dirigente-badge">
-              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span>Dirigente:</span>
-              <strong>${estudo.dirigente || 'João Batista'}</strong>
+            <div class="dirigente-card-inner">
+              <div class="avatar-icon avatar-dirigente">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="dirigente-info">
+                <span class="dirigente-cargo">Dirigente do Estudo:</span>
+                <strong class="dirigente-nome">${estudo.dirigente || 'João Batista'}</strong>
+              </div>
             </div>
           </div>
         </section>
+      `;
+    }
+
+    // Barra de Legenda Visual (para diferenciar de imediato cada tipo)
+    if (!filtrando) {
+      html += `
+        <div class="legenda-container">
+          <span class="legenda-titulo">Identificação visual:</span>
+          <div class="legenda-chips">
+            <span class="legenda-chip chip-comentario">
+              <span class="chip-indicador"></span>
+              Comentário da Pergunta
+            </span>
+            <span class="legenda-chip chip-leitura">
+              <span class="chip-indicador"></span>
+              Leitura de Texto Bíblico
+            </span>
+            <span class="legenda-chip chip-imagem">
+              <span class="chip-indicador"></span>
+              Comentário de Imagem
+            </span>
+            <span class="legenda-chip chip-recap">
+              <span class="chip-indicador"></span>
+              Recapitulação Final
+            </span>
+          </div>
+        </div>
       `;
     }
 
@@ -176,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
       html += `
         <section class="paragrafos-secao">
           <h3 class="secao-titulo">
-            ${filtrando ? 'Parágrafos com sua Designação' : 'Designações por Parágrafo'}
+            ${filtrando ? 'Parágrafos com sua Designação' : 'Designações Sequenciais por Parágrafo'}
           </h3>
           <div class="paragrafos-lista">
       `;
@@ -185,53 +216,107 @@ document.addEventListener('DOMContentLoaded', () => {
         html += `
           <article class="paragrafo-card">
             <div class="paragrafo-topo">
-              <span class="paragrafo-badge">Parágrafo ${p.numero}</span>
-              <p class="paragrafo-pergunta">${p.pergunta || ''}</p>
+              <div class="paragrafo-badge-row">
+                <span class="paragrafo-badge">Parágrafo ${p.numero}</span>
+              </div>
+              <h4 class="paragrafo-pergunta">${p.pergunta || ''}</h4>
             </div>
 
-            <div class="designacao-itens">
-              <!-- Comentário do Parágrafo -->
-              <div class="designacao-item item-comentario ${p.comBate ? 'item-destaque' : ''}">
-                <div class="item-rotulo">
-                  <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                  </svg>
-                  <span>Comentário:</span>
+            <div class="designacao-blocos">
+              <!-- Bloco 1: Comentário do Parágrafo -->
+              <div class="bloco-designacao bloco-comentario ${p.comBate ? 'item-destaque' : ''}">
+                <div class="bloco-header">
+                  <span class="tipo-badge badge-comentario">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Comentário da Pergunta
+                  </span>
                 </div>
-                <span class="item-nome">${p.comentario || 'A definir'}</span>
+                <div class="bloco-corpo">
+                  <div class="designado-box">
+                    <div class="avatar-icon avatar-comentario">
+                      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div class="designado-info">
+                      <span class="designado-cargo">Designado(a) para responder:</span>
+                      <strong class="designado-nome nome-comentario">${p.comentario || 'A definir'}</strong>
+                    </div>
+                  </div>
+                </div>
               </div>
         `;
-
-        // Se tiver imagem no parágrafo
-        if (p.tem_imagem) {
-          html += `
-              <div class="designacao-item item-imagem ${p.imgBate ? 'item-destaque' : ''}">
-                <div class="item-rotulo">
-                  <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                    <circle cx="9" cy="9" r="2"></circle>
-                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
-                  </svg>
-                  <span>Comentário da Imagem:</span>
-                </div>
-                <span class="item-nome">${p.comentario_imagem || 'A definir'}</span>
-                ${p.imagem_desc ? `<span class="item-detalhe">“${p.imagem_desc}”</span>` : ''}
-              </div>
-          `;
-        }
 
         // Se tiver leitura bíblica no parágrafo
         if (p.leitura_texto) {
           html += `
-              <div class="designacao-item item-leitura ${p.leiBate ? 'item-destaque' : ''}">
-                <div class="item-rotulo">
-                  <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                  </svg>
-                  <span>Leitura Bíblica (${p.leitura_texto.texto}):</span>
+              <!-- Bloco 2: Leitura Bíblica -->
+              <div class="bloco-designacao bloco-leitura ${p.leiBate ? 'item-destaque' : ''}">
+                <div class="bloco-header">
+                  <span class="tipo-badge badge-leitura">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    Leitura de Texto Bíblico
+                  </span>
+                  <span class="referencia-badge">${p.leitura_texto.texto}</span>
                 </div>
-                <span class="item-nome">${p.leitura_texto.leitor || 'A definir'}</span>
+                <div class="bloco-corpo">
+                  <div class="designado-box">
+                    <div class="avatar-icon avatar-leitura">
+                      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                      </svg>
+                    </div>
+                    <div class="designado-info">
+                      <span class="designado-cargo">Designado(a) para ler o texto bíblico:</span>
+                      <strong class="designado-nome nome-leitura">${p.leitura_texto.leitor || 'A definir'}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          `;
+        }
+
+        // Se tiver imagem no parágrafo
+        if (p.tem_imagem) {
+          html += `
+              <!-- Bloco 3: Comentário da Imagem -->
+              <div class="bloco-designacao bloco-imagem ${p.imgBate ? 'item-destaque' : ''}">
+                <div class="bloco-header">
+                  <span class="tipo-badge badge-imagem">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                      <circle cx="9" cy="9" r="2"></circle>
+                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                    </svg>
+                    Comentário da Imagem / Gravura
+                  </span>
+                </div>
+                ${p.imagem_desc ? `
+                  <div class="imagem-legenda-box">
+                    <span class="imagem-legenda-icon">🖼️</span>
+                    <span class="imagem-legenda-texto">“${p.imagem_desc}”</span>
+                  </div>
+                ` : ''}
+                <div class="bloco-corpo">
+                  <div class="designado-box">
+                    <div class="avatar-icon avatar-imagem">
+                      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div class="designado-info">
+                      <span class="designado-cargo">Designado(a) para comentar a imagem:</span>
+                      <strong class="designado-nome nome-imagem">${p.comentario_imagem || 'A definir'}</strong>
+                    </div>
+                  </div>
+                </div>
               </div>
           `;
         }
@@ -252,22 +337,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (recapFiltrados.length > 0) {
       html += `
         <section class="recapitulacao-secao">
-          <h3 class="secao-titulo">COMO RESPONDERIA?</h3>
+          <h3 class="secao-titulo">
+            COMO RESPONDERIA? • Recapitulação Final
+          </h3>
           <div class="recapitulacao-lista">
       `;
 
       recapFiltrados.forEach(r => {
         html += `
-          <div class="recap-card ${r.bate ? 'item-destaque' : ''}">
-            <span class="recap-num">${r.numero}.</span>
-            <div class="recap-info">
-              <p class="recap-pergunta">${r.pergunta}</p>
-              <div class="recap-designado">
-                <span class="recap-label">Comentário:</span>
-                <strong class="recap-nome">${r.designado || 'A definir'}</strong>
+          <article class="recap-card ${r.bate ? 'item-destaque' : ''}">
+            <div class="bloco-header">
+              <span class="tipo-badge badge-recap">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                Recapitulação • Pergunta ${r.numero}
+              </span>
+            </div>
+            <p class="recap-pergunta-texto">${r.pergunta}</p>
+            <div class="bloco-corpo">
+              <div class="designado-box">
+                <div class="avatar-icon avatar-recap">
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="designado-info">
+                  <span class="designado-cargo">Designado(a) para responder:</span>
+                  <strong class="designado-nome nome-recap">${r.designado || 'A definir'}</strong>
+                </div>
               </div>
             </div>
-          </div>
+          </article>
         `;
       });
 
