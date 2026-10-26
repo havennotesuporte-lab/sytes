@@ -123,7 +123,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "7",
       "pergunta": "7. Por que meditar nas coisas boas que Jeová nos dá fortalece nossa amizade com ele? (Tiago 1:17)",
-      "comentario": "Mateus Pereira",
+      "comentario": "Mateus Ferreira",
       "tem_imagem": false,
       "leitura_texto": {
         "texto": "Tiago 1:17",
