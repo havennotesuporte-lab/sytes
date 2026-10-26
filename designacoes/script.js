@@ -19,23 +19,30 @@ document.addEventListener('DOMContentLoaded', () => {
       .trim();
   }
 
-  fetch('designacoes.json?v=' + Date.now())
-    .then(res => {
-      if (!res.ok) throw new Error('Não foi possível carregar os dados de designações.');
-      return res.json();
-    })
-    .then(dados => {
-      dadosGlobal = dados;
-      renderizarDesignacoes(dadosGlobal, '');
-    })
-    .catch(err => {
-      console.error(err);
-      container.innerHTML = `
-        <div class="erro-msg">
-          <p>Erro ao carregar as designações. Verifique o arquivo designacoes.json.</p>
-        </div>
-      `;
-    });
+  // 1. Carrega dados diretamente do script local (funciona em file:/// e sem CORS)
+  if (window.DADOS_DESIGNACOES) {
+    dadosGlobal = window.DADOS_DESIGNACOES;
+    renderizarDesignacoes(dadosGlobal, '');
+  } else {
+    // 2. Fallback via fetch (para servidores HTTP/HTTPS)
+    fetch('designacoes.json?v=' + Date.now())
+      .then(res => {
+        if (!res.ok) throw new Error('Não foi possível carregar os dados de designações.');
+        return res.json();
+      })
+      .then(dados => {
+        dadosGlobal = dados;
+        renderizarDesignacoes(dadosGlobal, '');
+      })
+      .catch(err => {
+        console.error(err);
+        container.innerHTML = `
+          <div class="erro-msg">
+            <p>Erro ao carregar as designações. Verifique o arquivo designacoes.json.</p>
+          </div>
+        `;
+      });
+  }
 
   // Evento de busca em tempo real
   if (campoBusca) {
