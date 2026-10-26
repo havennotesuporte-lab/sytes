@@ -54,7 +54,7 @@ window.DADOS_DESIGNACOES = {
       {
         "numero": 1,
         "pergunta": "Por que devemos ser gratos?",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "João Gomes"
       },
       {
         "numero": 2,
