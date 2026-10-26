@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="version" content="1.0.0">
+  <link rel="manifest" href="../manifest.json">
   <title>Designações - Estudo de a Sentinela</title>
   <link rel="stylesheet" href="style.css?v=1.0.0">
+  <script>
+    if (!sessionStorage.getItem('site_iniciado')) {
+      sessionStorage.setItem('site_iniciado', 'true');
+      window.location.replace('../index.html');
+    }
+  </script>
 </head>
 <body>
   <!-- Header Padrão do Site (Fixo) -->
