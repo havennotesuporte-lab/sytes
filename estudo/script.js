@@ -48,6 +48,86 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================
+  // CONTROLE DE TAMANHO DE TEXTO (LEITURA)
+  // =========================================
+  const CHAVE_FONTE = 'sentinela_escala_fonte';
+  const NIVEIS_FONTE = [
+    { escala: 0.88, rotulo: '88%' },
+    { escala: 1.0,  rotulo: '100%' },
+    { escala: 1.15, rotulo: '115%' },
+    { escala: 1.30, rotulo: '130%' },
+    { escala: 1.45, rotulo: '145%' }
+  ];
+  const INDICE_PADRAO = 1; // 100%
+
+  const btnFonteMenos = document.getElementById('btn-fonte-menos');
+  const btnFonteMais = document.getElementById('btn-fonte-mais');
+  const btnFonteReset = document.getElementById('btn-fonte-reset');
+  const labelTamanhoFonte = document.getElementById('label-tamanho-fonte');
+
+  let indiceFonteAtual = INDICE_PADRAO;
+
+  function aplicarEscalaFonte(indice) {
+    if (indice < 0) indice = 0;
+    if (indice >= NIVEIS_FONTE.length) indice = NIVEIS_FONTE.length - 1;
+
+    indiceFonteAtual = indice;
+    const nivel = NIVEIS_FONTE[indice];
+
+    document.documentElement.style.setProperty('--escala-fonte', nivel.escala);
+
+    if (labelTamanhoFonte) {
+      labelTamanhoFonte.textContent = nivel.rotulo;
+    }
+
+    if (btnFonteMenos) {
+      btnFonteMenos.disabled = (indiceFonteAtual === 0);
+    }
+    if (btnFonteMais) {
+      btnFonteMais.disabled = (indiceFonteAtual === NIVEIS_FONTE.length - 1);
+    }
+
+    try {
+      localStorage.setItem(CHAVE_FONTE, String(indiceFonteAtual));
+    } catch (e) {}
+  }
+
+  // Carrega tamanho salvo
+  try {
+    const salvoFonte = localStorage.getItem(CHAVE_FONTE);
+    if (salvoFonte !== null) {
+      const parsed = parseInt(salvoFonte, 10);
+      if (!isNaN(parsed) && parsed >= 0 && parsed < NIVEIS_FONTE.length) {
+        indiceFonteAtual = parsed;
+      }
+    }
+  } catch (e) {}
+
+  aplicarEscalaFonte(indiceFonteAtual);
+
+  if (btnFonteMenos) {
+    btnFonteMenos.addEventListener('click', () => {
+      if (indiceFonteAtual > 0) {
+        aplicarEscalaFonte(indiceFonteAtual - 1);
+      }
+    });
+  }
+
+  if (btnFonteMais) {
+    btnFonteMais.addEventListener('click', () => {
+      if (indiceFonteAtual < NIVEIS_FONTE.length - 1) {
+        aplicarEscalaFonte(indiceFonteAtual + 1);
+      }
+    });
+  }
+
+  if (btnFonteReset) {
+    btnFonteReset.addEventListener('click', () => {
+      aplicarEscalaFonte(INDICE_PADRAO);
+    });
+  }
+
+  // =========================================
   // CAIXA FLUTUANTE DE TEXTOS BÍBLICOS
   // =========================================
   const modalOverlay = document.getElementById('modal-biblia');

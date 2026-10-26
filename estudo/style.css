@@ -161,6 +161,79 @@ body {
 }
 
 /* =========================================
+   CONTROLES DA NAVBAR: TAMANHO DE TEXTO E TEMAS
+   ========================================= */
+.nav-controles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.fonte-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--tema-group-bg);
+  padding: 3px;
+  border-radius: 9999px;
+  gap: 2px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-fonte {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 28px;
+  height: 26px;
+  line-height: 1;
+}
+
+.btn-fonte:hover:not(:disabled) {
+  color: var(--text-main);
+  background-color: var(--tema-active-bg);
+}
+
+.btn-fonte:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.icone-a-menos,
+.icone-a-mais {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.icone-a-menos small,
+.icone-a-mais small {
+  font-size: 0.8em;
+  font-weight: 900;
+  margin-left: 1px;
+}
+
+.btn-fonte-valor {
+  font-size: 0.72rem;
+  font-weight: 700;
+  min-width: 36px;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0.3rem 0.35rem;
+}
+
+/* =========================================
    GRUPO DE BOTÕES DE TEMA (CLARO, SÉPIA, ESCURO)
    ========================================= */
 .temas-container {
@@ -345,7 +418,7 @@ body {
 }
 
 .texto-tema {
-  font-size: 1.2rem;
+  font-size: calc(1.2rem * var(--escala-fonte, 1));
   font-weight: 700;
   font-style: italic;
   color: var(--primary);
@@ -353,7 +426,7 @@ body {
 }
 
 .texto-objetivo {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--escala-fonte, 1));
   color: var(--text-body);
   line-height: 1.5;
 }
@@ -373,14 +446,14 @@ body {
 }
 
 .pergunta-estudo {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
   color: var(--text-main);
   line-height: 1.5;
   margin-bottom: 0.65rem;
 }
 
 .paragrafo-estudo {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
   line-height: 1.8;
   color: var(--text-body);
   margin-bottom: 0.65rem;
@@ -788,7 +861,7 @@ body[data-theme="escuro"] .card-recap .card-designacao-nome {
 }
 
 .recap-pergunta-destaque {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
   line-height: 1.45;
   color: var(--text-main);
   margin: 0.2rem 0;
@@ -939,7 +1012,7 @@ body[data-theme="escuro"] .modal-biblia-card {
   padding: 1.25rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
   line-height: 1.75;
   color: var(--text-body);
 }
@@ -993,7 +1066,7 @@ body[data-theme="escuro"] .modal-biblia-card {
   }
   .modal-biblia-corpo {
     padding: 1rem;
-    font-size: 1rem;
+    font-size: calc(1rem * var(--escala-fonte, 1));
     line-height: 1.65;
   }
   .modal-biblia-footer {
@@ -1002,6 +1075,20 @@ body[data-theme="escuro"] .modal-biblia-card {
   .nav-container {
     padding: 0.55rem 0.75rem;
     gap: 0.25rem;
+  }
+  .nav-controles {
+    gap: 0.35rem;
+  }
+  .btn-fonte {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.72rem;
+    min-width: 24px;
+    height: 24px;
+  }
+  .btn-fonte-valor {
+    font-size: 0.68rem;
+    min-width: 32px;
+    padding: 0.25rem 0.25rem;
   }
   .brand-subtitle {
     display: none;
@@ -1029,7 +1116,7 @@ body[data-theme="escuro"] .modal-biblia-card {
   .pergunta-estudo,
   .paragrafo-estudo,
   .lista-recapitulacao li {
-    font-size: 1rem;
+    font-size: calc(1rem * var(--escala-fonte, 1));
     line-height: 1.75;
   }
 }

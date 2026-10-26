@@ -32,38 +32,54 @@
         </div>
       </a>
 
-      <!-- Botões de Modo de Leitura -->
-      <div class="temas-container" role="group" aria-label="Modo de leitura">
-        <button type="button" class="btn-tema active" data-theme="claro" title="Modo Claro" aria-pressed="true">
-          <span class="tema-seletor" aria-hidden="true"><span class="seletor-ponto"></span></span>
-          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2"></path>
-            <path d="M12 20v2"></path>
-            <path d="m4.93 4.93 1.41 1.41"></path>
-            <path d="m17.66 17.66 1.41 1.41"></path>
-            <path d="M2 12h2"></path>
-            <path d="M20 12h2"></path>
-            <path d="m6.34 17.66-1.41 1.41"></path>
-            <path d="m19.07 4.93-1.41 1.41"></path>
-          </svg>
-          <span class="tema-label">Claro</span>
-        </button>
-        <button type="button" class="btn-tema" data-theme="sepia" title="Modo Sépia" aria-pressed="false">
-          <span class="tema-seletor" aria-hidden="true"><span class="seletor-ponto"></span></span>
-          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-          <span class="tema-label">Sépia</span>
-        </button>
-        <button type="button" class="btn-tema" data-theme="escuro" title="Modo Escuro" aria-pressed="false">
-          <span class="tema-seletor" aria-hidden="true"><span class="seletor-ponto"></span></span>
-          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-          </svg>
-          <span class="tema-label">Escuro</span>
-        </button>
+      <!-- Controles da Navbar: Tamanho de Texto e Temas -->
+      <div class="nav-controles">
+        <!-- Controle de Tamanho do Texto -->
+        <div class="fonte-container" role="group" aria-label="Tamanho do texto">
+          <button type="button" id="btn-fonte-menos" class="btn-fonte" title="Diminuir tamanho do texto (A-)" aria-label="Diminuir tamanho do texto">
+            <span class="icone-a-menos">A<small>-</small></span>
+          </button>
+          <button type="button" id="btn-fonte-reset" class="btn-fonte btn-fonte-valor" title="Redefinir para 100%" aria-label="Redefinir tamanho">
+            <span id="label-tamanho-fonte">100%</span>
+          </button>
+          <button type="button" id="btn-fonte-mais" class="btn-fonte" title="Aumentar tamanho do texto (A+)" aria-label="Aumentar tamanho do texto">
+            <span class="icone-a-mais">A<small>+</small></span>
+          </button>
+        </div>
+
+        <!-- Botões de Modo de Leitura -->
+        <div class="temas-container" role="group" aria-label="Modo de leitura">
+          <button type="button" class="btn-tema active" data-theme="claro" title="Modo Claro" aria-pressed="true">
+            <span class="tema-seletor" aria-hidden="true"><span class="seletor-ponto"></span></span>
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <span class="tema-label">Claro</span>
+          </button>
+          <button type="button" class="btn-tema" data-theme="sepia" title="Modo Sépia" aria-pressed="false">
+            <span class="tema-seletor" aria-hidden="true"><span class="seletor-ponto"></span></span>
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            <span class="tema-label">Sépia</span>
+          </button>
+          <button type="button" class="btn-tema" data-theme="escuro" title="Modo Escuro" aria-pressed="false">
+            <span class="tema-seletor" aria-hidden="true"><span class="seletor-ponto"></span></span>
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+            <span class="tema-label">Escuro</span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
