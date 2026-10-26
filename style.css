@@ -157,13 +157,12 @@ body {
 }
 
 /* Seção de Atalhos (Orientações e Designações) */
-.orientacoes-wrapper,
-.designacoes-wrapper {
-  margin-bottom: 1.75rem;
+.orientacoes-wrapper {
+  margin-bottom: 0.85rem;
 }
 
 .designacoes-wrapper {
-  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .orientacoes-btn,
