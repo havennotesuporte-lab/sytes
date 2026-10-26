@@ -185,6 +185,296 @@ body {
 .icon-sm {
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
+}
+
+.icon-xs {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   ESTRUTURA DE DESIGNAÇÕES
+   ========================================= */
+.designacoes-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.carregando-msg, .erro-msg {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.erro-msg {
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+/* 1. Card Meta do Estudo */
+.estudo-meta-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.35rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.meta-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.meta-revista {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+}
+
+.meta-data {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.meta-titulo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.3;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.meta-dirigente-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.dirigente-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 9999px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.dirigente-badge strong {
+  color: #0f172a;
+}
+
+/* 2. Seções e Títulos */
+.secao-titulo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paragrafos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 3. Card de Parágrafo */
+.paragrafo-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paragrafo-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.paragrafo-topo {
+  margin-bottom: 0.85rem;
+}
+
+.paragrafo-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  margin-bottom: 0.45rem;
+}
+
+.paragrafo-pergunta {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+/* Itens de Designação */
+.designacao-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 0.75rem;
+}
+
+.designacao-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  background: #f8fafc;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.item-rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.item-nome {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.item-detalhe {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-muted);
+  width: 100%;
+  margin-top: -0.2rem;
+  padding-left: 1.4rem;
+}
+
+/* Variações de Cores para Diferenciar Itens */
+.item-comentario {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+}
+.item-comentario .item-rotulo {
+  color: #334155;
+}
+
+.item-imagem {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+}
+.item-imagem .item-rotulo {
+  color: #92400e;
+}
+.item-imagem .item-nome {
+  color: #78350f;
+}
+
+.item-leitura {
+  background: #f5f3ff;
+  border: 1px solid #ede9fe;
+}
+.item-leitura .item-rotulo {
+  color: #5b21b6;
+}
+.item-leitura .item-nome {
+  color: #4c1d95;
+}
+
+/* 4. Recapitulação */
+.recapitulacao-secao {
+  margin-top: 0.5rem;
+}
+
+.recapitulacao-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.recap-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+.recap-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.recap-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recap-pergunta {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.recap-designado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  background: #f8fafc;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.recap-label {
+  color: var(--text-muted);
+}
+
+.recap-nome {
+  color: #0f172a;
 }
 
 /* Responsividade Mobile */
