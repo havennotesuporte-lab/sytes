@@ -460,20 +460,26 @@ body {
 }
 
 /* =========================================
-   LEGENDAS E BADGES DE DESIGNAÇÃO NO ESTUDO
-   (Para acompanhamento do Dirigente)
+   CARDS DE DESIGNAÇÃO DO ESTUDO (PARA O DIRIGENTE)
    ========================================= */
 .artigo-dirigente-bar {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   background-color: #eff6ff;
-  border: 1px solid #dbeafe;
-  padding: 0.35rem 0.85rem;
+  border: 1.5px solid #bfdbfe;
+  padding: 0.45rem 1rem;
   border-radius: 9999px;
-  font-size: 0.82rem;
-  margin-top: 0.75rem;
+  font-size: 0.86rem;
+  margin-top: 0.85rem;
   color: #1e40af;
+  box-shadow: 0 1px 3px rgba(30, 64, 175, 0.08);
+}
+
+.artigo-dirigente-bar .dirigente-nome {
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.95rem;
 }
 
 body[data-theme="sepia"] .artigo-dirigente-bar {
@@ -481,184 +487,311 @@ body[data-theme="sepia"] .artigo-dirigente-bar {
   border-color: #dfd2b5;
   color: #78350f;
 }
+body[data-theme="sepia"] .artigo-dirigente-bar .dirigente-nome {
+  color: #382c1e;
+}
 
 body[data-theme="escuro"] .artigo-dirigente-bar {
   background-color: #1e293b;
   border-color: #334155;
   color: #93c5fd;
 }
-
-.pergunta-estudo-wrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.65rem;
-  flex-wrap: wrap;
+body[data-theme="escuro"] .artigo-dirigente-bar .dirigente-nome {
+  color: #ffffff;
 }
 
-.pergunta-estudo-wrapper .pergunta-estudo {
-  margin-bottom: 0;
-  flex: 1;
-  min-width: 260px;
-}
-
-/* Badge de Comentário / Designação de Pergunta */
-.designacao-estudo-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.28rem 0.65rem;
-  border-radius: 6px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  line-height: 1.3;
-}
-
-.tag-comentario {
-  background-color: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #1d4ed8;
-}
-
-.tag-comentario .tag-nome {
-  color: #1e3a8a;
-  font-weight: 800;
-}
-
-body[data-theme="sepia"] .tag-comentario {
-  background-color: #e8e4d8;
-  border-color: #d4cbb5;
-  color: #1e40af;
-}
-body[data-theme="sepia"] .tag-comentario .tag-nome {
-  color: #172554;
-}
-
-body[data-theme="escuro"] .tag-comentario {
-  background-color: #172554;
-  border-color: #1e40af;
-  color: #93c5fd;
-}
-body[data-theme="escuro"] .tag-comentario .tag-nome {
-  color: #dbeafe;
-}
-
-/* Alerta de Leitura Bíblica */
-.designacao-estudo-alerta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #faf5ff;
-  border: 1.5px solid #ede9fe;
-  border-left: 4px solid #7c3aed;
-  border-radius: 8px;
-  padding: 0.55rem 0.85rem;
-  font-size: 0.84rem;
-  margin: 0.65rem 0 1rem;
-  color: #6d28d9;
-}
-
-.designacao-estudo-alerta .alerta-nome {
-  color: #4c1d95;
-  font-weight: 800;
-  font-size: 0.92rem;
-}
-
-body[data-theme="sepia"] .designacao-estudo-alerta {
-  background-color: #ede4f0;
-  border-color: #d8c3df;
-  border-left-color: #6b21a8;
-  color: #581c87;
-}
-body[data-theme="sepia"] .designacao-estudo-alerta .alerta-nome {
-  color: #3b0764;
-}
-
-body[data-theme="escuro"] .designacao-estudo-alerta {
-  background-color: #2e1065;
-  border-color: #581c87;
-  border-left-color: #a855f7;
-  color: #c4b5fd;
-}
-body[data-theme="escuro"] .designacao-estudo-alerta .alerta-nome {
-  color: #f3e8ff;
-}
-
-/* Badge de Imagem na Legenda */
-.legenda-estudo {
+/* Card Container Principal */
+.card-estudo-designacao {
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 0.65rem 0 1.15rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.55rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.tag-imagem {
-  background-color: #fffbeb;
-  border: 1px solid #fde68a;
-  color: #b45309;
+.card-designacao-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 5px;
   width: fit-content;
 }
 
-.tag-imagem .tag-nome {
-  color: #78350f;
-  font-weight: 800;
+.card-designacao-corpo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-body[data-theme="sepia"] .tag-imagem {
-  background-color: #efe7d3;
-  border-color: #dfd0b0;
+.card-avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-designacao-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-designacao-papel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.card-designacao-nome {
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* 1. CARD COMENTÁRIO (AZUL) */
+.card-comentario {
+  background-color: #f0f7ff;
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+}
+.card-comentario .card-designacao-badge {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.card-comentario .card-avatar-circle {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.card-comentario .card-designacao-papel {
+  color: #475569;
+}
+.card-comentario .card-designacao-nome {
+  color: #1e3a8a;
+}
+
+body[data-theme="sepia"] .card-comentario {
+  background-color: #e9e3d3;
+  border: 1px solid #d4c7af;
+  border-left: 5px solid #1e3a8a;
+}
+body[data-theme="sepia"] .card-comentario .card-designacao-badge,
+body[data-theme="sepia"] .card-comentario .card-avatar-circle {
+  background-color: #dfd5be;
+  color: #1e3a8a;
+}
+body[data-theme="sepia"] .card-comentario .card-designacao-papel {
+  color: #574632;
+}
+body[data-theme="sepia"] .card-comentario .card-designacao-nome {
+  color: #0f2b68;
+}
+
+body[data-theme="escuro"] .card-comentario {
+  background-color: #111e38;
+  border: 1px solid #1e3a8a;
+  border-left: 5px solid #3b82f6;
+}
+body[data-theme="escuro"] .card-comentario .card-designacao-badge,
+body[data-theme="escuro"] .card-comentario .card-avatar-circle {
+  background-color: #1e293b;
+  color: #93c5fd;
+}
+body[data-theme="escuro"] .card-comentario .card-designacao-papel {
+  color: #94a3b8;
+}
+body[data-theme="escuro"] .card-comentario .card-designacao-nome {
+  color: #bfdbfe;
+}
+
+/* 2. CARD LEITURA BÍBLICA (ROXO / PÚRPURA) */
+.card-leitura {
+  background-color: #faf5ff;
+  border: 1.5px solid #ede9fe;
+  border-left: 5px solid #7c3aed;
+}
+.card-leitura .card-designacao-badge {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+.card-leitura .card-avatar-circle {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+.card-leitura .card-designacao-papel {
+  color: #6d28d9;
+}
+.card-leitura .card-designacao-nome {
+  color: #4c1d95;
+}
+
+body[data-theme="sepia"] .card-leitura {
+  background-color: #ede2f0;
+  border: 1.5px solid #d8c2e0;
+  border-left: 5px solid #6b21a8;
+}
+body[data-theme="sepia"] .card-leitura .card-designacao-badge,
+body[data-theme="sepia"] .card-leitura .card-avatar-circle {
+  background-color: #e0d0e6;
+  color: #581c87;
+}
+body[data-theme="sepia"] .card-leitura .card-designacao-papel {
+  color: #581c87;
+}
+body[data-theme="sepia"] .card-leitura .card-designacao-nome {
+  color: #3b0764;
+}
+
+body[data-theme="escuro"] .card-leitura {
+  background-color: #25103f;
+  border: 1.5px solid #581c87;
+  border-left: 5px solid #a855f7;
+}
+body[data-theme="escuro"] .card-leitura .card-designacao-badge,
+body[data-theme="escuro"] .card-leitura .card-avatar-circle {
+  background-color: #1e1b4b;
+  color: #c4b5fd;
+}
+body[data-theme="escuro"] .card-leitura .card-designacao-papel {
+  color: #c4b5fd;
+}
+body[data-theme="escuro"] .card-leitura .card-designacao-nome {
+  color: #f3e8ff;
+}
+
+/* 3. CARD IMAGEM (ÂMBAR / DOURADO) */
+.card-imagem {
+  background-color: #fffdf5;
+  border: 1.5px solid #fef3c7;
+  border-left: 5px solid #d97706;
+}
+.card-imagem .card-designacao-badge {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+.card-imagem .card-avatar-circle {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+.card-imagem .card-designacao-papel {
   color: #92400e;
 }
-body[data-theme="sepia"] .tag-imagem .tag-nome {
+.card-imagem .card-designacao-nome {
+  color: #78350f;
+}
+
+body[data-theme="sepia"] .card-imagem {
+  background-color: #f0e6ce;
+  border: 1.5px solid #ded0af;
+  border-left: 5px solid #b45309;
+}
+body[data-theme="sepia"] .card-imagem .card-designacao-badge,
+body[data-theme="sepia"] .card-imagem .card-avatar-circle {
+  background-color: #e6d7b5;
+  color: #92400e;
+}
+body[data-theme="sepia"] .card-imagem .card-designacao-papel {
+  color: #92400e;
+}
+body[data-theme="sepia"] .card-imagem .card-designacao-nome {
   color: #713f12;
 }
 
-body[data-theme="escuro"] .tag-imagem {
+body[data-theme="escuro"] .card-imagem {
+  background-color: #361a06;
+  border: 1.5px solid #78350f;
+  border-left: 5px solid #f59e0b;
+}
+body[data-theme="escuro"] .card-imagem .card-designacao-badge,
+body[data-theme="escuro"] .card-imagem .card-avatar-circle {
   background-color: #451a03;
-  border-color: #92400e;
   color: #fcd34d;
 }
-body[data-theme="escuro"] .tag-imagem .tag-nome {
+body[data-theme="escuro"] .card-imagem .card-designacao-papel {
+  color: #fcd34d;
+}
+body[data-theme="escuro"] .card-imagem .card-designacao-nome {
   color: #fef08a;
 }
 
-/* Recapitulação com Designações */
-.recap-item-estudo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+/* 4. CARD RECAPITULAÇÃO (VERDE / ESMERALDA) */
+.card-recap {
+  background-color: #f0fdf4;
+  border: 1.5px solid #a7f3d0;
+  border-left: 5px solid #059669;
+  margin-top: 0.5rem;
 }
-
-.tag-recap {
-  background-color: #ecfdf5;
-  border: 1px solid #a7f3d0;
+.card-recap .card-designacao-badge {
+  background-color: #d1fae5;
   color: #047857;
 }
-
-.tag-recap .tag-nome {
-  color: #064e3b;
-  font-weight: 800;
+.card-recap .card-avatar-circle {
+  background-color: #d1fae5;
+  color: #047857;
 }
-
-body[data-theme="sepia"] .tag-recap {
-  background-color: #e4ede4;
-  border-color: #c9dcc9;
+.card-recap .card-designacao-papel {
   color: #065f46;
 }
-body[data-theme="sepia"] .tag-recap .tag-nome {
+.card-recap .card-designacao-nome {
   color: #064e3b;
 }
 
-body[data-theme="escuro"] .tag-recap {
+body[data-theme="sepia"] .card-recap {
+  background-color: #e3ede3;
+  border: 1.5px solid #c8dcc8;
+  border-left: 5px solid #047857;
+}
+body[data-theme="sepia"] .card-recap .card-designacao-badge,
+body[data-theme="sepia"] .card-recap .card-avatar-circle {
+  background-color: #d2e4d2;
+  color: #065f46;
+}
+body[data-theme="sepia"] .card-recap .card-designacao-papel {
+  color: #065f46;
+}
+body[data-theme="sepia"] .card-recap .card-designacao-nome {
+  color: #064e3b;
+}
+
+body[data-theme="escuro"] .card-recap {
+  background-color: #062b1e;
+  border: 1.5px solid #065f46;
+  border-left: 5px solid #10b981;
+}
+body[data-theme="escuro"] .card-recap .card-designacao-badge,
+body[data-theme="escuro"] .card-recap .card-avatar-circle {
   background-color: #022c22;
-  border-color: #065f46;
   color: #6ee7b7;
 }
-body[data-theme="escuro"] .tag-recap .tag-nome {
+body[data-theme="escuro"] .card-recap .card-designacao-papel {
+  color: #6ee7b7;
+}
+body[data-theme="escuro"] .card-recap .card-designacao-nome {
   color: #a7f3d0;
+}
+
+.recap-cards-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.recap-pergunta-destaque {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--text-main);
+  margin: 0.2rem 0;
 }
 
 /* Ícones utilitários */
