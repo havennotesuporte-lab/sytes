@@ -148,7 +148,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "11-12",
       "pergunta": "11-12. Como nossos irmãos podem ser uma bênção para nós?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Gabriel Koschevitz",
       "tem_imagem": false,
       "leitura_texto": null
     },
