@@ -59,7 +59,7 @@ window.DADOS_DESIGNACOES = {
       {
         "numero": 2,
         "pergunta": "Como você pode desenvolver gratidão?",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Rhanne Oliveira"
       },
       {
         "numero": 3,
