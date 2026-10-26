@@ -25,9 +25,9 @@ window.DADOS_DESIGNACOES = {
         "designado": "Itagenir Ribeiro"
       },
       {
-        "paragrafo": "17",
+        "paragrafo": "17-18",
         "texto": "Romanos 12:1",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Julia Simão"
       }
     ],
     "imagens": [
@@ -189,7 +189,7 @@ window.DADOS_DESIGNACOES = {
       "tem_imagem": false,
       "leitura_texto": {
         "texto": "Romanos 12:1",
-        "leitor": "Nome do Irmão(ã)"
+        "leitor": "Julia Simão"
       }
     },
     {
