@@ -75,7 +75,7 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "1",
       "pergunta": "1. O que aprendemos com o exemplo de João? (Veja também as imagens.)",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Ítalo Fernandes",
       "tem_imagem": true,
       "imagem_desc": "A gratidão nos ajuda a ter felicidade e satisfação",
       "comentario_imagem": "Nome do Irmão(ã)",
@@ -84,14 +84,14 @@ window.DADOS_DESIGNACOES = {
     {
       "numero": "2",
       "pergunta": "2. Que atitude é comum no mundo em que vivemos?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Divanir Pereira",
       "tem_imagem": false,
       "leitura_texto": null
     },
     {
       "numero": "3",
       "pergunta": "3. O que vamos ver neste estudo?",
-      "comentario": "Nome do Irmão(ã)",
+      "comentario": "Aristelia dos Santos",
       "tem_imagem": false,
       "leitura_texto": null
     },
