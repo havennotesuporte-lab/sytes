@@ -1,7 +1,4 @@
-/*!
- * Dados de Designações da Reunião
- * Version: 1.0.0
- */
+/*! Version: 1.0.0 */
 window.DADOS_DESIGNACOES = {
   "estudo": {
     "titulo": "Mostre que você é grato — Por que e como?",
@@ -44,7 +41,7 @@ window.DADOS_DESIGNACOES = {
         "id": 2,
         "paragrafo": "9-10",
         "titulo": "Preste atenção todos os dias nas bênçãos que está recebendo",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Tamires"
       },
       {
         "id": 3,
@@ -145,7 +142,7 @@ window.DADOS_DESIGNACOES = {
       "comentario": "Alex",
       "tem_imagem": true,
       "imagem_desc": "Preste atenção todos os dias nas bênçãos que está recebendo (Veja os parágrafos 9-10.)",
-      "comentario_imagem": "Nome do Irmão(ã)",
+      "comentario_imagem": "Tamires",
       "leitura_texto": null
     },
     {
