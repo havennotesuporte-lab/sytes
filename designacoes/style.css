@@ -195,6 +195,98 @@ body {
 }
 
 /* =========================================
+   BARRA DE BUSCA POR NOME
+   ========================================= */
+.busca-container {
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.busca-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.busca-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.busca-input {
+  width: 100%;
+  padding: 0.85rem 2.5rem 0.85rem 2.75rem;
+  font-size: 0.98rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: #ffffff;
+  color: var(--text-main);
+  outline: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.busca-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-limpar-busca {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: color 0.15s ease;
+}
+
+.btn-limpar-busca:hover {
+  color: var(--text-main);
+}
+
+.busca-feedback {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 0.4rem 0.65rem;
+  background-color: #eff6ff;
+  border-radius: 8px;
+  border: 1px solid #dbeafe;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+}
+
+.busca-feedback.sem-resultado {
+  color: #991b1b;
+  background-color: #fef2f2;
+  border-color: #fee2e2;
+}
+
+/* Destaque visual quando a designação bate com a busca */
+.item-destaque {
+  border: 2px solid var(--accent) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  position: relative;
+}
+
+.item-destaque .item-nome {
+  color: var(--accent) !important;
+  font-weight: 800;
+}
+
+/* =========================================
    ESTRUTURA DE DESIGNAÇÕES
    ========================================= */
 .designacoes-conteudo {

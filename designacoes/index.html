@@ -58,6 +58,19 @@
       <p class="subtitle">Quadro de designações e participantes da reunião</p>
     </div>
 
+    <!-- Barra de Busca por Nome -->
+    <div class="busca-container">
+      <div class="busca-input-wrapper">
+        <svg class="icon-sm busca-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="campo-busca" class="busca-input" placeholder="Buscar pelo seu nome..." autocomplete="off">
+        <button type="button" id="btn-limpar-busca" class="btn-limpar-busca" aria-label="Limpar busca" style="display: none;">&times;</button>
+      </div>
+      <div id="busca-feedback" class="busca-feedback" style="display: none;"></div>
+    </div>
+
     <!-- Conteúdo Dinâmico das Designações carregado de designacoes.json -->
     <main id="designacoes-conteudo" class="designacoes-conteudo">
       <div class="carregando-msg">Carregando designações...</div>
