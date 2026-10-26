@@ -125,16 +125,20 @@ body {
 .intro-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.75rem;
-  background: #e0e7ff;
-  color: #3730a3;
-  font-size: 0.72rem;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  font-size: 0.76rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   border-radius: 9999px;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 2px rgba(30, 64, 175, 0.05);
+  max-width: 100%;
+  line-height: 1.4;
 }
 
 .page-title {
