@@ -284,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Se tiver imagem no parágrafo
         if (p.tem_imagem) {
+          const imgSrc = p.imagem_src || (p.numero === '1' ? '../estudo/2026601_univ_cnt_1_lg.jpg' : (p.numero === '9-10' ? '../estudo/2026601_univ_cnt_2_lg.jpg' : '../estudo/2026601_univ_cnt_3_lg.jpg'));
           html += `
               <!-- Bloco 3: Comentário da Imagem -->
               <div class="bloco-designacao bloco-imagem ${p.imgBate ? 'item-destaque' : ''}">
@@ -297,12 +298,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     Comentário da Imagem / Gravura
                   </span>
                 </div>
+
+                <!-- Imagem do Parágrafo Organizada -->
+                <div class="bloco-imagem-figura">
+                  <img src="${imgSrc}" alt="${p.imagem_desc || 'Imagem do Estudo'}" class="bloco-imagem-img" loading="lazy">
+                </div>
+
                 ${p.imagem_desc ? `
                   <div class="imagem-legenda-box">
                     <span class="imagem-legenda-icon">🖼️</span>
                     <span class="imagem-legenda-texto">“${p.imagem_desc}”</span>
                   </div>
                 ` : ''}
+
                 <div class="bloco-corpo">
                   <div class="designado-box">
                     <div class="avatar-icon avatar-imagem">

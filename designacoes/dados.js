@@ -35,18 +35,21 @@ window.DADOS_DESIGNACOES = {
         "id": 1,
         "paragrafo": "1",
         "titulo": "A gratidão nos ajuda a ter felicidade e satisfação",
+        "imagem_src": "../estudo/2026601_univ_cnt_1_lg.jpg",
         "designado": "Francisca Falcão"
       },
       {
         "id": 2,
         "paragrafo": "9-10",
         "titulo": "Preste atenção todos os dias nas bênçãos que está recebendo",
+        "imagem_src": "../estudo/2026601_univ_cnt_2_lg.jpg",
         "designado": "Tamires"
       },
       {
         "id": 3,
         "paragrafo": "14",
         "titulo": "Como você pode mostrar sua gratidão pelo que outros fazem por você?",
+        "imagem_src": "../estudo/2026601_univ_cnt_3_lg.jpg",
         "designado": "Eliane"
       }
     ],
@@ -75,6 +78,7 @@ window.DADOS_DESIGNACOES = {
       "comentario": "Ítalo Fernandes",
       "tem_imagem": true,
       "imagem_desc": "A gratidão nos ajuda a ter felicidade e satisfação",
+      "imagem_src": "../estudo/2026601_univ_cnt_1_lg.jpg",
       "comentario_imagem": "Francisca Falcão",
       "leitura_texto": null
     },
@@ -142,6 +146,7 @@ window.DADOS_DESIGNACOES = {
       "comentario": "Alex",
       "tem_imagem": true,
       "imagem_desc": "Preste atenção todos os dias nas bênçãos que está recebendo (Veja os parágrafos 9-10.)",
+      "imagem_src": "../estudo/2026601_univ_cnt_2_lg.jpg",
       "comentario_imagem": "Tamires",
       "leitura_texto": null
     },
@@ -165,6 +170,7 @@ window.DADOS_DESIGNACOES = {
       "comentario": "Jorge Santos",
       "tem_imagem": true,
       "imagem_desc": "Como você pode mostrar sua gratidão pelo que outros fazem por você?",
+      "imagem_src": "../estudo/2026601_univ_cnt_3_lg.jpg",
       "comentario_imagem": "Eliane",
       "leitura_texto": null
     },
