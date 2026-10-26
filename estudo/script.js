@@ -46,4 +46,79 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // =========================================
+  // CAIXA FLUTUANTE DE TEXTOS BÍBLICOS
+  // =========================================
+  const modalOverlay = document.getElementById('modal-biblia');
+  const modalTitulo = document.getElementById('modal-biblia-titulo');
+  const modalCorpo = document.getElementById('modal-biblia-corpo');
+  const modalLink = document.getElementById('modal-biblia-link');
+  const modalFechar = document.getElementById('modal-biblia-fechar');
+  const linksBiblia = document.querySelectorAll('.link-biblia');
+
+  function abrirModalBiblia(alvo) {
+    if (!modalOverlay || !window.TEXTOS_BIBLICOS) return;
+
+    const dados = window.TEXTOS_BIBLICOS[alvo];
+    if (!dados) {
+      console.warn('Texto bíblico não encontrado no mapeamento:', alvo);
+      return;
+    }
+
+    modalTitulo.textContent = dados.titulo;
+    modalCorpo.textContent = dados.texto;
+    if (modalLink) {
+      modalLink.href = dados.link || 'https://www.jw.org/pt/biblioteca/biblia/';
+    }
+
+    modalOverlay.classList.add('ativo');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    if (modalCorpo) modalCorpo.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharModalBiblia() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.remove('ativo');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Cliques nos links de versículo nos parágrafos
+  linksBiblia.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const alvo = link.getAttribute('data-targetverses');
+      if (alvo) {
+        abrirModalBiblia(alvo);
+      }
+    });
+  });
+
+  // Fechar no botão X
+  if (modalFechar) {
+    modalFechar.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      fecharModalBiblia();
+    });
+  }
+
+  // Fechar apenas ao clicar fora do cartão (no backdrop)
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        fecharModalBiblia();
+      }
+    });
+  }
+
+  // Fechar com tecla ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('ativo')) {
+      fecharModalBiblia();
+    }
+  });
 });
