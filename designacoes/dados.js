@@ -64,7 +64,7 @@ window.DADOS_DESIGNACOES = {
       {
         "numero": 3,
         "pergunta": "Como você pode mostrar que é grato?",
-        "designado": "Nome do Irmão(ã)"
+        "designado": "Daniele Trindade"
       }
     ]
   },
