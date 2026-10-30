@@ -1,0 +1,9 @@
+{
+  "name": "Estudo de a Sentinela",
+  "short_name": "A Sentinela",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a"
+}

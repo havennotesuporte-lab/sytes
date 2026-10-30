@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="version" content="1.0.0">
+  <link rel="manifest" href="../manifest.json">
+  <title>Designações - Estudo de a Sentinela</title>
+  <link rel="stylesheet" href="style.css?v=1.0.0">
+  <script>
+    if (!sessionStorage.getItem('site_iniciado')) {
+      sessionStorage.setItem('site_iniciado', 'true');
+      window.location.replace('../index.html');
+    }
+  </script>
+</head>
+<body>
+  <!-- Header Padrão do Site (Fixo) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg class="icon-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+            <path d="M6 6h10"></path>
+            <path d="M6 10h10"></path>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">A Sentinela</span>
+          <span class="brand-subtitle">Estudo Semanal</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="top-action-bar">
+      <a href="../index.html" class="btn-voltar">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Voltar para o Início</span>
+      </a>
+    </div>
+
+    <div class="page-intro">
+      <div class="intro-tag">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <path d="m9 14 2 2 4-4"></path>
+        </svg>
+        <span>Reunião Semanal</span>
+      </div>
+      <h1 class="page-title">Designações</h1>
+      <p class="subtitle">Quadro de designações e participantes da reunião</p>
+    </div>
+
+    <!-- Barra de Busca por Nome -->
+    <div class="busca-container">
+      <div class="busca-input-wrapper">
+        <svg class="icon-sm busca-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="campo-busca" class="busca-input" placeholder="Buscar pelo seu nome..." autocomplete="off">
+        <button type="button" id="btn-limpar-busca" class="btn-limpar-busca" aria-label="Limpar busca" style="display: none;">&times;</button>
+      </div>
+      <div id="busca-feedback" class="busca-feedback" style="display: none;"></div>
+    </div>
+
+    <!-- Conteúdo Dinâmico das Designações carregado de designacoes.json -->
+    <main id="designacoes-conteudo" class="designacoes-conteudo">
+      <div class="carregando-msg">Carregando designações...</div>
+    </main>
+  </div>
+
+  <script src="dados.js?v=1.0.0"></script>
+  <script src="script.js?v=1.0.0"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+{
+  "estudo": {
+    "titulo": "Mostre que você é grato — Por que e como?",
+    "revista": "A Sentinela • Outubro de 2026 • Página 6",
+    "data_reuniao": "Semana de 7 a 13 de dezembro de 2026",
+    "dirigente": "João Batista",
+    "leitor": null
+  },
+  "designacoes_especiais": {
+    "leituras_biblicas": [
+      {
+        "paragrafo": "6",
+        "texto": "Filipenses 4:6, 7",
+        "designado": "Eliza Xavier"
+      },
+      {
+        "paragrafo": "7",
+        "texto": "Tiago 1:17",
+        "designado": "Vanuza Dias"
+      },
+      {
+        "paragrafo": "8",
+        "texto": "2 Coríntios 4:7",
+        "designado": "Itagenir Ribeiro"
+      },
+      {
+        "paragrafo": "17-18",
+        "texto": "Romanos 12:1",
+        "designado": "Julia Simão"
+      }
+    ],
+    "imagens": [
+      {
+        "id": 1,
+        "paragrafo": "1",
+        "titulo": "A gratidão nos ajuda a ter felicidade e satisfação",
+        "imagem_src": "../estudo/2026601_univ_cnt_1_lg.jpg",
+        "designado": "Francisca Falcão"
+      },
+      {
+        "id": 2,
+        "paragrafo": "9-10",
+        "titulo": "Preste atenção todos os dias nas bênçãos que está recebendo",
+        "imagem_src": "../estudo/2026601_univ_cnt_2_lg.jpg",
+        "designado": "Tamires"
+      },
+      {
+        "id": 3,
+        "paragrafo": "14",
+        "titulo": "Como você pode mostrar sua gratidão pelo que outros fazem por você?",
+        "imagem_src": "../estudo/2026601_univ_cnt_3_lg.jpg",
+        "designado": "Eliane"
+      }
+    ],
+    "recapitulacao": [
+      {
+        "numero": 1,
+        "pergunta": "Por que devemos ser gratos?",
+        "designado": "João Gomes"
+      },
+      {
+        "numero": 2,
+        "pergunta": "Como você pode desenvolver gratidão?",
+        "designado": "Rhanne Oliveira"
+      },
+      {
+        "numero": 3,
+        "pergunta": "Como você pode mostrar que é grato?",
+        "designado": "Daniele Trindade"
+      }
+    ]
+  },
+  "paragrafos": [
+    {
+      "numero": "1",
+      "pergunta": "1. O que aprendemos com o exemplo de João? (Veja também as imagens.)",
+      "comentario": "Ítalo Fernandes",
+      "tem_imagem": true,
+      "imagem_desc": "A gratidão nos ajuda a ter felicidade e satisfação",
+      "imagem_src": "../estudo/2026601_univ_cnt_1_lg.jpg",
+      "comentario_imagem": "Francisca Falcão",
+      "leitura_texto": null
+    },
+    {
+      "numero": "2",
+      "pergunta": "2. Que atitude é comum no mundo em que vivemos?",
+      "comentario": "Divanir Pereira",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "3",
+      "pergunta": "3. O que vamos ver neste estudo?",
+      "comentario": "Aristelia dos Santos",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "4",
+      "pergunta": "4. Por que a ingratidão faz mal para nós?",
+      "comentario": "Edgar Rodrigues",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "5",
+      "pergunta": "5. Por que a gratidão nos ajuda a ser mais felizes?",
+      "comentario": "Adryelle Ludovico",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "6",
+      "pergunta": "6. Por que podemos dizer que a gratidão nos ajuda a ‘não ficar ansiosos’? (Filipenses 4:6, 7)",
+      "comentario": "Lucas Xavier",
+      "tem_imagem": false,
+      "leitura_texto": {
+        "texto": "Filipenses 4:6, 7",
+        "leitor": "Eliza Xavier"
+      }
+    },
+    {
+      "numero": "7",
+      "pergunta": "7. Por que meditar nas coisas boas que Jeová nos dá fortalece nossa amizade com ele? (Tiago 1:17)",
+      "comentario": "Mateus Ferreira",
+      "tem_imagem": false,
+      "leitura_texto": {
+        "texto": "Tiago 1:17",
+        "leitor": "Vanuza Dias"
+      }
+    },
+    {
+      "numero": "8",
+      "pergunta": "8. Por que é bom pensar nas bênçãos que Jeová já nos deu? (2 Coríntios 4:7)",
+      "comentario": "Maria Fernandes",
+      "tem_imagem": false,
+      "leitura_texto": {
+        "texto": "2 Coríntios 4:7",
+        "leitor": "Itagenir Ribeiro"
+      }
+    },
+    {
+      "numero": "9-10",
+      "pergunta": "9-10. Que bênçãos de Jeová você recebe a cada dia? (Veja também a imagem.)",
+      "comentario": "Alex",
+      "tem_imagem": true,
+      "imagem_desc": "Preste atenção todos os dias nas bênçãos que está recebendo (Veja os parágrafos 9-10.)",
+      "imagem_src": "../estudo/2026601_univ_cnt_2_lg.jpg",
+      "comentario_imagem": "Tamires",
+      "leitura_texto": null
+    },
+    {
+      "numero": "11-12",
+      "pergunta": "11-12. Como nossos irmãos podem ser uma bênção para nós?",
+      "comentario": "Gabriel Koschevitz",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "13",
+      "pergunta": "13. De que formas podemos mostrar gratidão?",
+      "comentario": "Marileide Lopes",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "14",
+      "pergunta": "14. Como você pode mostrar por palavras que é grato? (Veja também as imagens.)",
+      "comentario": "Jorge Santos",
+      "tem_imagem": true,
+      "imagem_desc": "Como você pode mostrar sua gratidão pelo que outros fazem por você?",
+      "imagem_src": "../estudo/2026601_univ_cnt_3_lg.jpg",
+      "comentario_imagem": "Eliane",
+      "leitura_texto": null
+    },
+    {
+      "numero": "15",
+      "pergunta": "15. Como podemos mostrar por palavras nossa gratidão a Jeová?",
+      "comentario": "Randson Henrique",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "16",
+      "pergunta": "16. Por que devemos mostrar por ações que somos gratos?",
+      "comentario": "Brian Miranda",
+      "tem_imagem": false,
+      "leitura_texto": null
+    },
+    {
+      "numero": "17-18",
+      "pergunta": "17-18. Como podemos mostrar por ações que somos gratos a Jeová? (Romanos 12:1)",
+      "comentario": "Beatriz",
+      "tem_imagem": false,
+      "leitura_texto": {
+        "texto": "Romanos 12:1",
+        "leitor": "Julia Simão"
+      }
+    },
+    {
+      "numero": "19",
+      "pergunta": "19. Por que você está decidido a continuar mostrando que é grato?",
+      "comentario": "Sulamita Rodrigues",
+      "tem_imagem": false,
+      "leitura_texto": null
+    }
+  ]
+}

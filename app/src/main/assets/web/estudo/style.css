@@ -1,0 +1,1131 @@
+/*!
+ * Estudo de a Sentinela - CSS de Leitura
+ * Version: 1.0.0
+ */
+/* =========================================
+   PALETAS DE CORES & MODOS DE LEITURA
+   ========================================= */
+:root, body[data-theme="claro"] {
+  --bg-color: #ffffff;
+  --navbar-bg: #ffffff;
+  --card-bg: transparent;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-body: #334155;
+  --primary: #1e3a8a;
+  --primary-hover: #1e40af;
+  --accent: #2563eb;
+  --border-color: #e2e8f0;
+  --box-bg: transparent;
+  --btn-bg: #ffffff;
+  --tema-group-bg: #f1f5f9;
+  --tema-active-bg: #ffffff;
+  --tema-active-text: #0f172a;
+  --radius: 0px;
+}
+
+/* Modo Escuro (otimizado para leitura noturna suave) */
+body[data-theme="escuro"] {
+  --bg-color: #0b0f19;
+  --navbar-bg: #111827;
+  --card-bg: transparent;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-body: #cbd5e1;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --accent: #38bdf8;
+  --border-color: #243049;
+  --box-bg: transparent;
+  --btn-bg: #1e293b;
+  --tema-group-bg: #1e293b;
+  --tema-active-bg: #334155;
+  --tema-active-text: #ffffff;
+}
+
+/* Modo Sépia (conforto visual clássico de papel/e-reader) */
+body[data-theme="sepia"] {
+  --bg-color: #f5eedc;
+  --navbar-bg: #ede3cc;
+  --card-bg: transparent;
+  --text-main: #382c1e;
+  --text-muted: #7b6951;
+  --text-body: #473827;
+  --primary: #854d0e;
+  --primary-hover: #a16207;
+  --accent: #b45309;
+  --border-color: #dfd2b5;
+  --box-bg: transparent;
+  --btn-bg: #faf4e6;
+  --tema-group-bg: #e6dac0;
+  --tema-active-bg: #faf4e6;
+  --tema-active-text: #382c1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 56px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* =========================================
+   HEADER / NAVBAR FIXA COM MODOS DE LEITURA
+   ========================================= */
+.navbar {
+  width: 100%;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.65rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--box-bg);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.icon-brand {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* =========================================
+   CONTROLES DA NAVBAR: TAMANHO DE TEXTO E TEMAS
+   ========================================= */
+.nav-controles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.fonte-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--tema-group-bg);
+  padding: 3px;
+  border-radius: 9999px;
+  gap: 2px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-fonte {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 28px;
+  height: 26px;
+  line-height: 1;
+}
+
+.btn-fonte:hover:not(:disabled) {
+  color: var(--text-main);
+  background-color: var(--tema-active-bg);
+}
+
+.btn-fonte:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.icone-a-menos,
+.icone-a-mais {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.icone-a-menos small,
+.icone-a-mais small {
+  font-size: 0.8em;
+  font-weight: 900;
+  margin-left: 1px;
+}
+
+.btn-fonte-valor {
+  font-size: 0.72rem;
+  font-weight: 700;
+  min-width: 36px;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0.3rem 0.35rem;
+}
+
+/* =========================================
+   GRUPO DE BOTÕES DE TEMA (CLARO, SÉPIA, ESCURO)
+   ========================================= */
+.temas-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--tema-group-bg);
+  padding: 3px;
+  border-radius: 9999px;
+  gap: 2px;
+  border: 1px solid var(--border-color);
+}
+
+.btn-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-tema:hover {
+  color: var(--text-main);
+}
+
+/* Seletor indicador do modo ativo */
+.tema-seletor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-muted);
+  opacity: 0.45;
+  background-color: transparent;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.seletor-ponto {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: scale(0);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-tema:hover .tema-seletor {
+  opacity: 0.8;
+  border-color: var(--text-main);
+}
+
+.btn-tema.active {
+  background-color: var(--tema-active-bg);
+  color: var(--tema-active-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--primary);
+}
+
+.btn-tema.active .tema-seletor {
+  opacity: 1;
+  border-color: var(--primary);
+  background-color: transparent;
+}
+
+.btn-tema.active .seletor-ponto {
+  background-color: var(--primary);
+  transform: scale(1);
+}
+
+/* =========================================
+   CONTAINER & BARRA DE VOLTAR
+   ========================================= */
+.container {
+  width: 100%;
+  max-width: 740px;
+  padding: 2rem 1.25rem 6rem;
+}
+
+.top-action-bar {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.35rem 0;
+}
+
+.btn-voltar:hover {
+  color: var(--primary);
+  transform: translateX(-3px);
+}
+
+/* =========================================
+   ARTIGO DE LEITURA (TEXTO DIRETO NA TELA)
+   ========================================= */
+.artigo-leitura {
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.artigo-cabecalho {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.artigo-revista {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.artigo-titulo {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+}
+
+.artigo-fonte {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+}
+
+.fonte-rotulo {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.link-fonte {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.link-fonte:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Tema & Objetivo */
+.artigo-tema-box {
+  margin-bottom: 2.5rem;
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  background-color: transparent;
+  border-left: 3px solid var(--primary);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.texto-tema {
+  font-size: calc(1.2rem * var(--escala-fonte, 1));
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.texto-objetivo {
+  font-size: calc(0.95rem * var(--escala-fonte, 1));
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.texto-objetivo strong {
+  color: var(--text-main);
+}
+
+/* Corpo do Estudo */
+.artigo-corpo {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-estudo {
+  margin-bottom: 2rem;
+}
+
+.pergunta-estudo {
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
+  color: var(--text-main);
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.paragrafo-estudo {
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
+  line-height: 1.8;
+  color: var(--text-body);
+  margin-bottom: 0.65rem;
+}
+
+.paragrafo-estudo strong {
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+/* Imagens do Estudo */
+.imagem-estudo-box {
+  margin: 1.5rem 0 1rem;
+}
+
+.imagem-estudo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.legenda-estudo {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* Subtítulos de Seção */
+.subtitulo-secao {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Bloco de Recapitulação: COMO RESPONDERIA? */
+.revisao-bloco {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.lista-recapitulacao {
+  list-style: disc;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.lista-recapitulacao li {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Rodapé */
+.artigo-rodape {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   CARDS DE DESIGNAÇÃO DO ESTUDO (PARA O DIRIGENTE)
+   ========================================= */
+.artigo-dirigente-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background-color: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.86rem;
+  margin-top: 0.85rem;
+  color: #1e40af;
+  box-shadow: 0 1px 3px rgba(30, 64, 175, 0.08);
+}
+
+.artigo-dirigente-bar .dirigente-nome {
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+body[data-theme="sepia"] .artigo-dirigente-bar {
+  background-color: #ede3cc;
+  border-color: #dfd2b5;
+  color: #78350f;
+}
+body[data-theme="sepia"] .artigo-dirigente-bar .dirigente-nome {
+  color: #382c1e;
+}
+
+body[data-theme="escuro"] .artigo-dirigente-bar {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #93c5fd;
+}
+body[data-theme="escuro"] .artigo-dirigente-bar .dirigente-nome {
+  color: #ffffff;
+}
+
+/* Card Container Principal */
+.card-estudo-designacao {
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 0.65rem 0 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.card-designacao-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.card-designacao-corpo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.card-avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-designacao-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-designacao-papel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.card-designacao-nome {
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* 1. CARD COMENTÁRIO (AZUL) */
+.card-comentario {
+  background-color: #f0f7ff;
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+}
+.card-comentario .card-designacao-badge {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.card-comentario .card-avatar-circle {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.card-comentario .card-designacao-papel {
+  color: #475569;
+}
+.card-comentario .card-designacao-nome {
+  color: #1e3a8a;
+}
+
+body[data-theme="sepia"] .card-comentario {
+  background-color: #e9e3d3;
+  border: 1px solid #d4c7af;
+  border-left: 5px solid #1e3a8a;
+}
+body[data-theme="sepia"] .card-comentario .card-designacao-badge,
+body[data-theme="sepia"] .card-comentario .card-avatar-circle {
+  background-color: #dfd5be;
+  color: #1e3a8a;
+}
+body[data-theme="sepia"] .card-comentario .card-designacao-papel {
+  color: #574632;
+}
+body[data-theme="sepia"] .card-comentario .card-designacao-nome {
+  color: #0f2b68;
+}
+
+body[data-theme="escuro"] .card-comentario {
+  background-color: #111e38;
+  border: 1px solid #1e3a8a;
+  border-left: 5px solid #3b82f6;
+}
+body[data-theme="escuro"] .card-comentario .card-designacao-badge,
+body[data-theme="escuro"] .card-comentario .card-avatar-circle {
+  background-color: #1e293b;
+  color: #93c5fd;
+}
+body[data-theme="escuro"] .card-comentario .card-designacao-papel {
+  color: #94a3b8;
+}
+body[data-theme="escuro"] .card-comentario .card-designacao-nome {
+  color: #bfdbfe;
+}
+
+/* 2. CARD LEITURA BÍBLICA (ROXO / PÚRPURA) */
+.card-leitura {
+  background-color: #faf5ff;
+  border: 1.5px solid #ede9fe;
+  border-left: 5px solid #7c3aed;
+}
+.card-leitura .card-designacao-badge {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+.card-leitura .card-avatar-circle {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+.card-leitura .card-designacao-papel {
+  color: #6d28d9;
+}
+.card-leitura .card-designacao-nome {
+  color: #4c1d95;
+}
+
+body[data-theme="sepia"] .card-leitura {
+  background-color: #ede2f0;
+  border: 1.5px solid #d8c2e0;
+  border-left: 5px solid #6b21a8;
+}
+body[data-theme="sepia"] .card-leitura .card-designacao-badge,
+body[data-theme="sepia"] .card-leitura .card-avatar-circle {
+  background-color: #e0d0e6;
+  color: #581c87;
+}
+body[data-theme="sepia"] .card-leitura .card-designacao-papel {
+  color: #581c87;
+}
+body[data-theme="sepia"] .card-leitura .card-designacao-nome {
+  color: #3b0764;
+}
+
+body[data-theme="escuro"] .card-leitura {
+  background-color: #25103f;
+  border: 1.5px solid #581c87;
+  border-left: 5px solid #a855f7;
+}
+body[data-theme="escuro"] .card-leitura .card-designacao-badge,
+body[data-theme="escuro"] .card-leitura .card-avatar-circle {
+  background-color: #1e1b4b;
+  color: #c4b5fd;
+}
+body[data-theme="escuro"] .card-leitura .card-designacao-papel {
+  color: #c4b5fd;
+}
+body[data-theme="escuro"] .card-leitura .card-designacao-nome {
+  color: #f3e8ff;
+}
+
+/* 3. CARD IMAGEM (ÂMBAR / DOURADO) */
+.card-imagem {
+  background-color: #fffdf5;
+  border: 1.5px solid #fef3c7;
+  border-left: 5px solid #d97706;
+}
+.card-imagem .card-designacao-badge {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+.card-imagem .card-avatar-circle {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+.card-imagem .card-designacao-papel {
+  color: #92400e;
+}
+.card-imagem .card-designacao-nome {
+  color: #78350f;
+}
+
+body[data-theme="sepia"] .card-imagem {
+  background-color: #f0e6ce;
+  border: 1.5px solid #ded0af;
+  border-left: 5px solid #b45309;
+}
+body[data-theme="sepia"] .card-imagem .card-designacao-badge,
+body[data-theme="sepia"] .card-imagem .card-avatar-circle {
+  background-color: #e6d7b5;
+  color: #92400e;
+}
+body[data-theme="sepia"] .card-imagem .card-designacao-papel {
+  color: #92400e;
+}
+body[data-theme="sepia"] .card-imagem .card-designacao-nome {
+  color: #713f12;
+}
+
+body[data-theme="escuro"] .card-imagem {
+  background-color: #361a06;
+  border: 1.5px solid #78350f;
+  border-left: 5px solid #f59e0b;
+}
+body[data-theme="escuro"] .card-imagem .card-designacao-badge,
+body[data-theme="escuro"] .card-imagem .card-avatar-circle {
+  background-color: #451a03;
+  color: #fcd34d;
+}
+body[data-theme="escuro"] .card-imagem .card-designacao-papel {
+  color: #fcd34d;
+}
+body[data-theme="escuro"] .card-imagem .card-designacao-nome {
+  color: #fef08a;
+}
+
+/* 4. CARD RECAPITULAÇÃO (VERDE / ESMERALDA) */
+.card-recap {
+  background-color: #f0fdf4;
+  border: 1.5px solid #a7f3d0;
+  border-left: 5px solid #059669;
+  margin-top: 0.5rem;
+}
+.card-recap .card-designacao-badge {
+  background-color: #d1fae5;
+  color: #047857;
+}
+.card-recap .card-avatar-circle {
+  background-color: #d1fae5;
+  color: #047857;
+}
+.card-recap .card-designacao-papel {
+  color: #065f46;
+}
+.card-recap .card-designacao-nome {
+  color: #064e3b;
+}
+
+body[data-theme="sepia"] .card-recap {
+  background-color: #e3ede3;
+  border: 1.5px solid #c8dcc8;
+  border-left: 5px solid #047857;
+}
+body[data-theme="sepia"] .card-recap .card-designacao-badge,
+body[data-theme="sepia"] .card-recap .card-avatar-circle {
+  background-color: #d2e4d2;
+  color: #065f46;
+}
+body[data-theme="sepia"] .card-recap .card-designacao-papel {
+  color: #065f46;
+}
+body[data-theme="sepia"] .card-recap .card-designacao-nome {
+  color: #064e3b;
+}
+
+body[data-theme="escuro"] .card-recap {
+  background-color: #062b1e;
+  border: 1.5px solid #065f46;
+  border-left: 5px solid #10b981;
+}
+body[data-theme="escuro"] .card-recap .card-designacao-badge,
+body[data-theme="escuro"] .card-recap .card-avatar-circle {
+  background-color: #022c22;
+  color: #6ee7b7;
+}
+body[data-theme="escuro"] .card-recap .card-designacao-papel {
+  color: #6ee7b7;
+}
+body[data-theme="escuro"] .card-recap .card-designacao-nome {
+  color: #a7f3d0;
+}
+
+.recap-cards-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.recap-pergunta-destaque {
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
+  line-height: 1.45;
+  color: var(--text-main);
+  margin: 0.2rem 0;
+}
+
+/* Ícones utilitários */
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.icon-xs {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   LINKS DE TEXTOS BÍBLICOS E CAIXA FLUTUANTE
+   ========================================= */
+.link-biblia {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.link-biblia:hover {
+  color: var(--accent);
+  text-decoration-style: solid;
+}
+
+/* Modal / Caixa Flutuante */
+.modal-biblia-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-biblia-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-biblia-card {
+  width: 100%;
+  max-width: 500px;
+  max-height: 82vh;
+  max-height: 82dvh;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: auto;
+  transition: background-color 0.25s ease;
+}
+
+body[data-theme="claro"] .modal-biblia-card {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+}
+
+body[data-theme="sepia"] .modal-biblia-card {
+  background-color: #fcf8ed;
+  border-color: #dfd2b5;
+}
+
+body[data-theme="escuro"] .modal-biblia-card {
+  background-color: #151e2e;
+  border-color: #243049;
+}
+
+.modal-biblia-header {
+  padding: 1.15rem 1.25rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-biblia-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+}
+
+.modal-biblia-fechar {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.modal-biblia-fechar:hover {
+  color: var(--text-main);
+  background-color: var(--tema-group-bg);
+}
+
+.modal-biblia-titulo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  padding: 0 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  margin: 0;
+}
+
+.modal-biblia-corpo {
+  padding: 1.25rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: calc(1.05rem * var(--escala-fonte, 1));
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+.modal-biblia-corpo p {
+  margin-bottom: 0.75rem;
+}
+
+.modal-biblia-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--tema-group-bg);
+}
+
+.modal-biblia-link-fonte {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.modal-biblia-link-fonte:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 600px) {
+  .modal-biblia-overlay {
+    padding: 0.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-biblia-card {
+    max-width: 100%;
+    max-height: 85dvh;
+    border-radius: 14px;
+    margin: auto;
+  }
+  .modal-biblia-header {
+    padding: 1rem 1rem 0.4rem;
+  }
+  .modal-biblia-titulo {
+    font-size: 1.15rem;
+    padding: 0 1rem 0.6rem;
+  }
+  .modal-biblia-corpo {
+    padding: 1rem;
+    font-size: calc(1rem * var(--escala-fonte, 1));
+    line-height: 1.65;
+  }
+  .modal-biblia-footer {
+    padding: 0.65rem 1rem;
+  }
+  .nav-container {
+    padding: 0.55rem 0.75rem;
+    gap: 0.25rem;
+  }
+  .nav-controles {
+    gap: 0.35rem;
+  }
+  .btn-fonte {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.72rem;
+    min-width: 24px;
+    height: 24px;
+  }
+  .btn-fonte-valor {
+    font-size: 0.68rem;
+    min-width: 32px;
+    padding: 0.25rem 0.25rem;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  .btn-tema {
+    padding: 0.3rem 0.45rem;
+  }
+  .tema-label {
+    display: none; /* Em celulares menores, exibe os ícones de Sol, Livro e Lua */
+  }
+  .container {
+    padding: 1rem 0.75rem 3rem;
+  }
+  .artigo-titulo {
+    font-size: 1.65rem;
+  }
+  .pergunta-estudo,
+  .paragrafo-estudo,
+  .lista-recapitulacao li {
+    font-size: calc(1rem * var(--escala-fonte, 1));
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-title {
+    font-size: 0.88rem;
+  }
+  .artigo-titulo {
+    font-size: 1.45rem;
+  }
+}
