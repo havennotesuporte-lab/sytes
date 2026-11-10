@@ -487,20 +487,21 @@ body {
 
 /* Subtítulos de Seção */
 .subtitulo-secao {
-  font-size: calc(1.55rem * var(--escala-fonte, 1));
+  font-size: calc(1.35rem * var(--escala-fonte, 1));
   font-weight: 800;
-  color: #2563eb;
+  color: #1e3a8a;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 1.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  margin-top: 2rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 body[data-theme="escuro"] .subtitulo-secao {
-  color: #60a5fa;
+  color: #93c5fd;
 }
 
 /* Bloco de Recapitulação: COMO RESPONDERIA? */
