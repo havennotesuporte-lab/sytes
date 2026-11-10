@@ -487,15 +487,20 @@ body {
 
 /* Subtítulos de Seção */
 .subtitulo-secao {
-  font-size: 1.25rem;
+  font-size: calc(1.55rem * var(--escala-fonte, 1));
   font-weight: 800;
-  color: var(--primary);
+  color: #2563eb;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--border-color);
+}
+
+body[data-theme="escuro"] .subtitulo-secao {
+  color: #60a5fa;
 }
 
 /* Bloco de Recapitulação: COMO RESPONDERIA? */
